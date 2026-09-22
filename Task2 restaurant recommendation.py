@@ -62,11 +62,36 @@ def recommend(cuisines, city=None, price_range=None, min_rating=0.0,
 #4. Test with sample users
 pd.set_option("display.width", 250, "display.max_colwidth", 40, "display.max_columns", None)
 
-print("User A: wants Italian, New Delhi, mid-to-high price (3)")
-print(recommend(["Italian"], city="New Delhi", price_range=3), "\n")
+print("\n========== RESTAURANT RECOMMENDATIONS ==========\n")
 
-print("User B: wants North Indian + Mughlai, Gurgaon, budget-friendly (2), online delivery")
-print(recommend(["North Indian", "Mughlai"], city="Gurgaon", price_range=2, online_delivery=True), "\n")
+user_a = recommend(
+    ["Italian"],
+    city="New Delhi",
+    price_range=3
+)
 
-print("User C: wants Chinese + Fast Food, Noida, cheap (1), rating 4.0+")
-print(recommend(["Chinese", "Fast Food"], city="Noida", price_range=1, min_rating=4.0), "\n")
+print("USER A - Italian | New Delhi | Price 3")
+print(user_a.to_string(index=False))
+print()
+
+user_b = recommend(
+    ["North Indian", "Mughlai"],
+    city="Gurgaon",
+    price_range=2,
+    online_delivery=True
+)
+
+print("USER B - North Indian + Mughlai | Gurgaon | Price 2 | Online Delivery")
+print(user_b.to_string(index=False))
+print()
+
+user_c = recommend(
+    ["Chinese", "Fast Food"],
+    city="Noida",
+    price_range=1,
+    min_rating=4.0
+)
+
+print("USER C - Chinese + Fast Food | Noida | Price 1 | Rating 4.0+")
+print(user_c.to_string(index=False))
+print()
