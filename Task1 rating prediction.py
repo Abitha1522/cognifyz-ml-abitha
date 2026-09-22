@@ -7,7 +7,7 @@ from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 
-DATA_PATH = r"C:\Users\HP\Downloads\dataset.csv"
+DATA_PATH = "dataset.csv"
 
 df = pd.read_csv(DATA_PATH)
 print("Dataset shape:", df.shape)
@@ -97,6 +97,9 @@ importance.sort_values().plot(
 )
 
 plt.tight_layout()
+
+plt.savefig("outputs/task1_feature_importance.png")
+
 plt.show()
 
 #6. Extra analysis

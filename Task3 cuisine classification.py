@@ -7,7 +7,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
-DATA_PATH = r"C:\Users\HP\Downloads\dataset.csv"
+DATA_PATH = "dataset.csv"
 df = pd.read_csv(DATA_PATH)
 
 # Missing values: only 'Cuisines' has any (9 rows), so we drop them.
@@ -76,6 +76,7 @@ plt.ylabel("Actual")
 plt.title(f"Confusion Matrix — {best_name}")
 plt.xticks(rotation=45, ha="right")
 plt.tight_layout()
+plt.savefig("outputs/task3_confusion_matrix.png")
 plt.show()
 
 #6. Discuss class imbalance / bias

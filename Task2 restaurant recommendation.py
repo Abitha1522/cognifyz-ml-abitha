@@ -4,7 +4,7 @@ import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-DATA_PATH = r"C:\Users\HP\Downloads\dataset.csv" 
+DATA_PATH = "dataset.csv" 
 df = pd.read_csv(DATA_PATH)
 
 # Missing values: only 'Cuisines' has any (9 rows), so we drop them.
